@@ -1,0 +1,82 @@
+@model Product
+@{
+    ViewData["Title"] = "Edit Book | BookVault";
+}
+
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-7">
+
+            <div class="d-flex align-items-center gap-3 mb-4">
+                <a asp-controller="Product" asp-action="Index" class="btn btn-outline-secondary btn-sm">
+                    <i class="bi bi-arrow-left"></i> Back to Catalog
+                </a>
+                <h1 class="page-title mb-0">
+                    <i class="bi bi-pencil-fill me-2 text-gold"></i>Edit Book
+                </h1>
+            </div>
+
+            <div class="card vault-card shadow">
+                <div class="card-header bg-transparent border-secondary py-3 px-4">
+                    <span class="text-muted small">Editing:</span>
+                    <span class="text-white fw-semibold ms-2">@Model.Title</span>
+                </div>
+                <div class="card-body p-4">
+                    <form method="post" asp-action="Edit">
+                        <input asp-for="Id" type="hidden" />
+                        <input asp-for="CreatedDateTime" type="hidden" />
+                        <div class="row g-3">
+
+                            <div class="col-12">
+                                <label asp-for="Title" class="form-label vault-label"></label>
+                                <input asp-for="Title" class="form-control vault-input" />
+                                <span asp-validation-for="Title" class="text-danger small"></span>
+                            </div>
+
+                            <div class="col-12">
+                                <label asp-for="Author" class="form-label vault-label"></label>
+                                <input asp-for="Author" class="form-control vault-input" />
+                                <span asp-validation-for="Author" class="text-danger small"></span>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label asp-for="Price" class="form-label vault-label"></label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-dark border-secondary text-muted">$</span>
+                                    <input asp-for="Price" class="form-control vault-input" />
+                                </div>
+                                <span asp-validation-for="Price" class="text-danger small"></span>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label asp-for="Genre" class="form-label vault-label"></label>
+                                <input asp-for="Genre" class="form-control vault-input" />
+                                <span asp-validation-for="Genre" class="text-danger small"></span>
+                            </div>
+
+                            <div class="col-12">
+                                <label asp-for="StockQuantity" class="form-label vault-label"></label>
+                                <input asp-for="StockQuantity" class="form-control vault-input" />
+                                <span asp-validation-for="StockQuantity" class="text-danger small"></span>
+                            </div>
+
+                            <div class="col-12 d-flex gap-3 mt-2">
+                                <button type="submit" class="btn btn-gold btn-lg flex-grow-1">
+                                    <i class="bi bi-check-circle-fill me-1"></i> Save Changes
+                                </button>
+                                <a asp-controller="Product" asp-action="Index" class="btn btn-outline-secondary btn-lg">
+                                    Cancel
+                                </a>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{ <partial name="_ValidationScriptsPartial" /> }
+}
