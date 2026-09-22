@@ -1,0 +1,342 @@
+/* =============================================
+   BookVault - Custom Design System
+   Author: Riyaz
+   ============================================= */
+
+/* Google Font */
+* {
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+}
+
+/* ---- Color Variables ---- */
+:root {
+    --navy:       #0f172a;
+    --navy-light: #1e293b;
+    --navy-mid:   #263548;
+    --gold:       #f59e0b;
+    --gold-hover: #d97706;
+    --text-muted: #94a3b8;
+    --border:     #334155;
+    --white:      #f1f5f9;
+}
+
+/* ---- Base ---- */
+body {
+    background-color: var(--navy);
+    color: var(--white);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+main {
+    flex: 1;
+    padding-bottom: 80px;
+}
+
+/* ---- Gold Utility ---- */
+.text-gold { color: var(--gold) !important; }
+.bg-gold   { background-color: var(--gold) !important; }
+
+/* ---- Navbar ---- */
+.vault-navbar {
+    background-color: var(--navy-light);
+    border-bottom: 1px solid var(--border);
+    padding: 0.75rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.vault-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--white) !important;
+    text-decoration: none;
+    letter-spacing: -0.3px;
+}
+
+.vault-brand:hover { color: var(--white) !important; }
+
+.brand-icon {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-hover));
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--navy);
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.vault-nav-link {
+    color: var(--text-muted) !important;
+    padding: 0.5rem 0.9rem !important;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.vault-nav-link:hover,
+.vault-nav-link.active {
+    color: var(--white) !important;
+    background-color: var(--navy-mid);
+}
+
+.vault-nav-link.active {
+    color: var(--gold) !important;
+}
+
+/* ---- Gold Button ---- */
+.btn-gold {
+    background-color: var(--gold);
+    border-color: var(--gold);
+    color: var(--navy);
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.btn-gold:hover {
+    background-color: var(--gold-hover);
+    border-color: var(--gold-hover);
+    color: var(--navy);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.35);
+}
+
+/* ---- Cards ---- */
+.vault-card {
+    background-color: var(--navy-light);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    color: var(--white);
+}
+
+/* ---- Tables ---- */
+.vault-table {
+    background-color: transparent;
+}
+
+.vault-table thead th {
+    background-color: var(--navy-mid);
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.9rem 1rem;
+    border-color: var(--border);
+}
+
+.vault-table tbody tr {
+    border-color: var(--border);
+    transition: background 0.15s ease;
+}
+
+.vault-table tbody tr:hover {
+    background-color: var(--navy-mid) !important;
+}
+
+.vault-table tbody td {
+    padding: 0.85rem 1rem;
+    vertical-align: middle;
+    border-color: var(--border);
+}
+
+/* ---- Form Inputs ---- */
+.vault-input {
+    background-color: var(--navy);
+    border: 1px solid var(--border);
+    color: var(--white);
+    border-radius: 8px;
+    padding: 0.6rem 0.9rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.vault-input:focus {
+    background-color: var(--navy);
+    border-color: var(--gold);
+    color: var(--white);
+    box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
+}
+
+.vault-input::placeholder { color: var(--text-muted); }
+
+.vault-label {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.4rem;
+}
+
+/* ---- Search Bar ---- */
+.vault-search {
+    background-color: var(--navy);
+    border: 1px solid var(--border);
+    border-left: none;
+    color: var(--white);
+}
+
+.vault-search:focus {
+    background-color: var(--navy);
+    border-color: var(--gold);
+    color: var(--white);
+    box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
+}
+
+.vault-search::placeholder { color: var(--text-muted); }
+
+/* ---- Badges ---- */
+.genre-badge {
+    background-color: rgba(245, 158, 11, 0.15);
+    color: var(--gold);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    padding: 0.3rem 0.7rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+/* ---- Stat Pills ---- */
+.stat-pill {
+    background-color: var(--navy-light);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 0.4rem 1rem;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+/* ---- Delete Detail Rows ---- */
+.vault-detail-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.vault-detail-row:last-of-type { border-bottom: none; }
+
+/* ---- Page Title ---- */
+.page-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.3px;
+}
+
+/* ---- Footer ---- */
+.vault-footer {
+    background-color: var(--navy-light);
+    border-top: 1px solid var(--border);
+    padding: 1.1rem 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* ---- Hero Section ---- */
+.hero-section {
+    background: linear-gradient(135deg, var(--navy-light) 0%, var(--navy) 60%, #1a0a2e 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 5rem 0 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 1.1;
+}
+
+.hero-subtitle {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    max-width: 520px;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: rgba(245, 158, 11, 0.15);
+    border: 1px solid rgba(245, 158, 11, 0.35);
+    color: var(--gold);
+    border-radius: 20px;
+    padding: 0.3rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* ---- Stat Cards ---- */
+.stat-card {
+    background-color: var(--navy-light);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.5rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.stat-card .stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.stat-card .stat-number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1;
+}
+
+.stat-card .stat-label {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 0.3rem;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+    .hero-title { font-size: 2rem; }
+    main { padding-bottom: 120px; }
+}
